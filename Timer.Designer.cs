@@ -33,16 +33,17 @@
             lblTimer = new Label();
             timerClock = new System.Windows.Forms.Timer(components);
             chkOnTop = new CheckBox();
+            lblSessionCount = new Label();
             SuspendLayout();
             // 
             // lblFeed
             // 
             lblFeed.AutoSize = true;
-            lblFeed.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFeed.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             lblFeed.ForeColor = Color.DimGray;
-            lblFeed.Location = new Point(20, 46);
+            lblFeed.Location = new Point(20, 62);
             lblFeed.Name = "lblFeed";
-            lblFeed.Size = new Size(60, 25);
+            lblFeed.Size = new Size(48, 20);
             lblFeed.TabIndex = 0;
             lblFeed.Text = "break";
             lblFeed.TextAlign = ContentAlignment.BottomLeft;
@@ -52,7 +53,7 @@
             lblTimer.AutoSize = true;
             lblTimer.Font = new Font("Consolas", 32.25F, FontStyle.Bold);
             lblTimer.ForeColor = Color.FromArgb(64, 64, 64);
-            lblTimer.Location = new Point(13, 0);
+            lblTimer.Location = new Point(13, 22);
             lblTimer.Name = "lblTimer";
             lblTimer.Size = new Size(142, 51);
             lblTimer.TabIndex = 1;
@@ -62,13 +63,14 @@
             // timerClock
             // 
             timerClock.Enabled = true;
-            timerClock.Interval = 15;
+            timerClock.Interval = 10;
             timerClock.Tick += timerClock_Tick;
             // 
             // chkOnTop
             // 
             chkOnTop.AutoSize = true;
-            chkOnTop.Location = new Point(5, 101);
+            chkOnTop.ForeColor = SystemColors.ControlDarkDark;
+            chkOnTop.Location = new Point(6, 100);
             chkOnTop.Name = "chkOnTop";
             chkOnTop.Size = new Size(99, 19);
             chkOnTop.TabIndex = 2;
@@ -76,15 +78,28 @@
             chkOnTop.UseVisualStyleBackColor = true;
             chkOnTop.CheckedChanged += chkOnTop_CheckedChanged;
             // 
+            // lblSessionCount
+            // 
+            lblSessionCount.AutoSize = true;
+            lblSessionCount.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold);
+            lblSessionCount.ForeColor = Color.DimGray;
+            lblSessionCount.Location = new Point(0, -3);
+            lblSessionCount.Name = "lblSessionCount";
+            lblSessionCount.Size = new Size(75, 19);
+            lblSessionCount.TabIndex = 3;
+            lblSessionCount.Text = "1st session";
+            lblSessionCount.TextAlign = ContentAlignment.BottomLeft;
+            // 
             // Timer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(164, 121);
+            Controls.Add(lblFeed);
+            Controls.Add(lblSessionCount);
             Controls.Add(chkOnTop);
             Controls.Add(lblTimer);
-            Controls.Add(lblFeed);
             MaximizeBox = false;
             MaximumSize = new Size(180, 160);
             MinimizeBox = false;
@@ -103,5 +118,6 @@
         private Label lblTimer;
         private System.Windows.Forms.Timer timerClock;
         private CheckBox chkOnTop;
+        private Label lblSessionCount;
     }
 }

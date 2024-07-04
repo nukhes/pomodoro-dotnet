@@ -14,6 +14,7 @@ namespace pomodoro_dotnet
 {
     public partial class Timer : Form
     {
+        int sessionCounter = 1;
         int sessionDuration;
         int breakDuration = 5;
         int[] timerValues = { 0, 0 };
@@ -53,6 +54,7 @@ namespace pomodoro_dotnet
                 {
                     isOnSession = false;
                     SessionChanged();
+                    lblSessionCount.Text = $"";
                     timerValues[0] = 5;
                     timerValues[1] = 0;
                 }
@@ -73,6 +75,8 @@ namespace pomodoro_dotnet
                 {
                     isOnSession = true;
                     SessionChanged();
+                    sessionCounter++;
+                    lblSessionCount.Text = $"{sessionCounter}st session";
                     timerValues[0] = sessionDuration;
                     timerValues[1] = 0;
                 }
