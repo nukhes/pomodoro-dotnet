@@ -63,7 +63,7 @@
             // timerClock
             // 
             timerClock.Enabled = true;
-            timerClock.Interval = 10;
+            timerClock.Interval = 1000;
             timerClock.Tick += timerClock_Tick;
             // 
             // chkOnTop

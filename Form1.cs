@@ -23,9 +23,9 @@ namespace pomodoro_dotnet
         private void goToTimer()
         {
             int sessionDuration = Convert.ToInt32(txtDuration.Text);
-            string alert = "The duration of a session should not exceed 55 minutes";
+            string alert = "The duration of a session should be between 10 and 55 minutes";
 
-            if (sessionDuration <= 55)
+            if (sessionDuration <= 55 && sessionDuration >= 10)
             {
                 Form timerForm = new Timer(sessionDuration);
                 timerForm.Show();
