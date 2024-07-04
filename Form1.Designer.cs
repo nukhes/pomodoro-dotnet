@@ -28,53 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            txtDuration = new TextBox();
+            lblSession = new Label();
+            btnStartPomodoro = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtDuration
             // 
-            textBox1.Location = new Point(165, 135);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 0;
+            txtDuration.BackColor = Color.White;
+            txtDuration.Font = new Font("Segoe UI", 12F);
+            txtDuration.Location = new Point(9, 31);
+            txtDuration.MaxLength = 2;
+            txtDuration.Name = "txtDuration";
+            txtDuration.Size = new Size(174, 29);
+            txtDuration.TabIndex = 0;
+            txtDuration.TextAlign = HorizontalAlignment.Center;
             // 
-            // comboBox1
+            // lblSession
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(165, 164);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            lblSession.AutoSize = true;
+            lblSession.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSession.ForeColor = Color.FromArgb(64, 64, 64);
+            lblSession.Location = new Point(6, 10);
+            lblSession.Name = "lblSession";
+            lblSession.Size = new Size(162, 17);
+            lblSession.TabIndex = 3;
+            lblSession.Text = "Session duration (minutes)";
             // 
-            // label1
+            // btnStartPomodoro
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(38, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
+            btnStartPomodoro.Location = new Point(9, 66);
+            btnStartPomodoro.Name = "btnStartPomodoro";
+            btnStartPomodoro.Size = new Size(174, 36);
+            btnStartPomodoro.TabIndex = 5;
+            btnStartPomodoro.Text = "Start";
+            btnStartPomodoro.UseVisualStyleBackColor = true;
+            btnStartPomodoro.Click += btnStartPomodoro_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(302, 482);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
+            AutoSize = true;
+            BackColor = Color.White;
+            ClientSize = new Size(191, 114);
+            Controls.Add(btnStartPomodoro);
+            Controls.Add(lblSession);
+            Controls.Add(txtDuration);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(207, 153);
+            MinimizeBox = false;
+            MinimumSize = new Size(207, 153);
             Name = "Form1";
-            Text = "Form1";
+            SizeGripStyle = SizeGripStyle.Hide;
+            TopMost = true;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private Label label1;
+        private TextBox txtDuration;
+        private Label lblSession;
+        private Button btnStartPomodoro;
     }
 }
